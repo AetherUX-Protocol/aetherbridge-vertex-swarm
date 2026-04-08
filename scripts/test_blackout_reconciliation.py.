@@ -1,0 +1,50 @@
+import time
+import json
+import hashlib
+
+class BlackoutRail:
+    def __init__(self):
+        self.offline_ledger = []
+        self.is_connected = False # Simulating Blackout
+
+    def issue_iou(self, sender, recipient, amount):
+        print(f"  [BLACKOUT] Alert: Global Connection Lost. Switching to Local IOU...")
+        
+        # Create a signed IOU (In a real app, this uses a private key)
+        iou_payload = {
+            "from": sender,
+            "to": recipient,
+            "amount": f"{amount} USDC",
+            "timestamp": time.time(),
+            "nonce": hashlib.sha256(str(time.time()).encode()).hexdigest()[:8]
+        }
+        
+        self.offline_ledger.append(iou_payload)
+        print(f"  [BLACKOUT] IOU Signed and Gossiped to Tashi Mesh: {iou_payload['nonce']}")
+        return iou_payload
+
+    def reconnect_and_flush(self):
+        print(f"\n  [RAIL] Connection Restored! Syncing {len(self.offline_ledger)} IOUs to Soroban...")
+        time.sleep(2)
+        for iou in self.offline_ledger:
+            print(f"  [STELLAR] Settlement Finalized: {iou['amount']} from {iou['from']} -> {iou['to']}")
+        self.offline_ledger = []
+        print("  [SYSTEM] Local Ledger Cleared. All agents reconciled.")
+
+def run_blackout_demo():
+    print("--- SCENARIO: SWARM BLACKOUT RECONCILIATION ---")
+    rail = BlackoutRail()
+    
+    # 1. Agent performs task while offline
+    print("[Agent-Alpha] Working on 'Satellite-Data-Relay' for Agent-Beta...")
+    time.sleep(1)
+    
+    # 2. Issue IOU since we are in Blackout
+    iou = rail.issue_iou("Agent-Beta", "Agent-Alpha", 15)
+    
+    # 3. Time passes... connection returns
+    print("\n[System] ... 4 hours later ...")
+    rail.reconnect_and_flush()
+
+if __name__ == "__main__":
+    run_blackout_demo()
