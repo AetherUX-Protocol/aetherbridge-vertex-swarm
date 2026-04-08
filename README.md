@@ -20,8 +20,7 @@ AetherBridge Rail: AetherBridge validates the agent’s Sovereign Identity and l
 Local Finality: Once the task is verified by the swarm consensus (Tashi), AetherBridge triggers the peer-to-peer payout.
 Quick Start (Zero-Cloud Demo)
 # Clone the repo
-git clone https://github.com/your-username/aetherbridge-swarm
-cd aetherbridge-swarm
+git clone https://github.com/AetherUX-Protocol/aetherbridge-vertex-swarm.git
 
 # Launch a 3-node local swarm
 docker-compose up -d
