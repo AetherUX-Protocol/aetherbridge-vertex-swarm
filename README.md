@@ -31,3 +31,5 @@ Robustness & Recovery
 Blackout Mode: If the internet connection is lost, AetherBridge continues to track "Economic Credit" locally within the Tashi mesh.
 
 Self-Healing: If a node drops during a transaction, AetherBridge uses Tashi’s state-sync to rollback or re-route the settlement to a backup agent.
+Safety & Security
+Leaderless Arbitration: AetherBridge uses Tashi Vertex consensus to automatically resolve disputes and prevent double-spending in offline/blackout scenarios. See PLAYBOOK.md for our arbitration standards.
