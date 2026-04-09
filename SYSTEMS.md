@@ -35,6 +35,8 @@ Node Dropout,Tashi's leaderless state-sync ensures the offline transaction histo
 Total Mesh Partition,"The swarm splits into ""Sub-Swarms."" Each maintains its own local credit ledger until they re-merge."
 Malicious IOU,Agents verify the digital signature of every offline credit request before providing service.
 How to Test Blackout Mode
+
+Technical Implementation: See /scripts/test_blackout_reconciliation.py for the P2P IOU gossip logic
 In our docker-compose environment, you can simulate a blackout by dropping the bridge network to the external web while keeping the internal P2P network alive:
 # Block external traffic to simulate Blackout
 docker exec -it aetherbridge-node-1 iptables -A OUTPUT -d 0.0.0.0/0 -j DROP
