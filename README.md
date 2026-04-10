@@ -55,3 +55,14 @@ Capital Efficiency: AetherBridge Sovereign Rails reduce M2M settlement latency b
 Operational Resilience: Zero-Cloud dependency ensures 100% mission-critical uptime for AI swarms, even in Tier-4 communication blackout scenarios.
 
 Cost Predictability: Fixed-gas Soroban reconciliation allows for sub-cent $0.01 batch settlements, making P2P agentic tasks economically viable at scale.
+Vertex 2.0
+## 🧠 Vertex Track 3: The Leaderless Agent Economy
+
+Aetherbridge is built specifically to address the **Vertex Swarm Challenge Track 3**. We have eliminated the "Master Orchestrator" model in favor of a true peer-to-peer (P2P) coordination mesh.
+
+### Key Innovations for the Swarm:
+- **Zero-Leader Negotiation:** Using the Tashi/Vertex P2P layer, agents in the Aetherbridge mesh autonomously negotiate roles (e.g., Data Relay vs. State Validator) without a central broker.
+- **Machine-Speed Execution:** Task hand-offs occur at the network edge, minimizing latency by avoiding cloud round-trips.
+- **Self-Healing Topology:** If a "State Validator" node drops, the swarm automatically re-negotiates and assigns the role to the next available peer via a P2P handshake.
+- System Architecture
+- Unlike traditional agent frameworks that rely on a central LLM-orchestrator or a cloud-based task-manager, Aetherbridge utilizes Vertex 2.0 as a TCP/IP-level coordination fabric. This allows for a completely leaderless network where the 'brain' is distributed across every node in the swarm.
