@@ -1,0 +1,25 @@
+{
+  "project_name": "Aetherbridge",
+  "track": "Track 3: The Agent Economy",
+  "coordination_type": "P2P Leaderless Swarm",
+  "tech_stack": {
+    "protocol": "Vertex 2.0",
+    "transport": "Tashi P2P / Fox MQ",
+    "consensus": "Direct State Replication"
+  },
+  "swarm_metadata": {
+    "peer_discovery": "Vertex Discovery Service",
+    "heartbeat_interval_ms": 1000,
+    "max_nodes_tested": 10,
+    "resilience_protocol": "Auto-Role Renegotiation"
+  },
+  "submission_artifacts": {
+    "github_repo": "https://github.com/AetherUX-Protocol/aetherbridge-vertex-swarm",
+    "demo_video_url": "INSERT_YOUR_VIDEO_LINK_HERE",
+    "state_logs_path": "/logs/handshake_proof.txt"
+  },
+  "deployment_info": {
+    "environment": "Simulation / Edge-Node",
+    "system_requirements": "Vertex-compatible P2P environment"
+  }
+}
