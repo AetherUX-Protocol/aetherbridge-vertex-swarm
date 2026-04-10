@@ -66,3 +66,21 @@ Aetherbridge is built specifically to address the **Vertex Swarm Challenge Track
 - **Self-Healing Topology:** If a "State Validator" node drops, the swarm automatically re-negotiates and assigns the role to the next available peer via a P2P handshake.
 - System Architecture
 - Unlike traditional agent frameworks that rely on a central LLM-orchestrator or a cloud-based task-manager, Aetherbridge utilizes Vertex 2.0 as a TCP/IP-level coordination fabric. This allows for a completely leaderless network where the 'brain' is distributed across every node in the swarm.
+
+- ## 🛡️ Swarm Resilience & Self-Healing
+
+Aetherbridge is designed to operate in high-latency and unstable network environments. By utilizing the **Vertex 2.0 Stateful Handshake**, the swarm maintains a shared world-model that is resilient to individual node failures.
+
+### 1. Node Dropout Recovery
+If an Aether node (Agent) loses connectivity or goes offline:
+- **Detection:** The swarm detects a "Heartbeat Timeout" via the Tashi P2P discovery layer within <1000ms.
+- **Role Re-negotiation:** The remaining nodes initiate a leaderless re-negotiation. If the dropped node was the primary **State Relay**, the swarm promotes the next available peer with the highest "Reliability Score" to take over its responsibilities.
+- **Zero-Downtime Verification:** Because the state is replicated across the mesh (not stored in a central cloud), identity verification for the National Trust Layer continues without interruption.
+
+### 2. Heterogeneous Coordination
+Aetherbridge supports coordination between different agent types (e.g., Lightweight IoT nodes, High-compute AI Validators, and Mobile Field units). 
+- **Resource-Aware Handoff:** Tasks are distributed based on node capability. A "Mobile" node might handle local P2P discovery, while a "High-Compute" node handles the ZK-Proof generation.
+- **Protocol Agnostic:** The swarm bridges different agent frameworks (e.g., AutoGPT, LangChain) into a single unified Vertex mesh.
+
+### 3. Graceful Degradation
+In "Blackout" scenarios (zero internet connectivity), Aetherbridge shifts to a **Local-Only Mesh**. Agents continue to coordinate local tasks (like proximity-based identity verification) and sync the final state-blobs to the main ledger once backhaul connectivity is restored.
