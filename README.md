@@ -87,3 +87,6 @@ Aetherbridge supports coordination between different agent types (e.g., Lightwei
 
 ### 3. Graceful Degradation
 In "Blackout" scenarios (zero internet connectivity), Aetherbridge shifts to a **Local-Only Mesh**. Agents continue to coordinate local tasks (like proximity-based identity verification) and sync the final state-blobs to the main ledger once backhaul connectivity is restored.
+
+One-Pager: https://docs.google.com/document/d/1WCPXCqH52RNEn1XyFY6DkxbVQF5P1qQZKvtuUcsdN1U/edit?usp=sharing
+Demo Video: https://youtu.be/FOBf4af3o4U
