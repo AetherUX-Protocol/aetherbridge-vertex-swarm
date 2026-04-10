@@ -1,3 +1,6 @@
+![AetherBridge  Sovereign Agentic Rails for P2P Swarms](https://github.com/user-attachments/assets/1808c743-37fe-41c6-84a6-3eaae5187fa8)
+
+
 PLAYBOOK.md
 
 # aetherbridge-vertex-swarm
