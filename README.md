@@ -22,5 +22,11 @@ This repository contains the leaderless settlement layer for **AetherUX**, utili
 2. Launch Agent A: `python agents/aether_agent.py --id Alpha`
 3. Launch Agent B: `python agents/aether_agent.py --id Beta`
 
+4. ### 🔧 Auditor's Quick-Start
+The core logic for the Vertex Swarm Challenge is located in `/agents/aether_agent.py`. 
+- **Stateful Handshake:** Lines 13-28
+- **Blackout Mode / P2P Resilience:** Lines 33-36
+- **x402 Settlement Logic:** Integrated within the agent state management.
+
 One-Pager: https://docs.google.com/document/d/1WCPXCqH52RNEn1XyFY6DkxbVQF5P1qQZKvtuUcsdN1U/edit?usp=sharing
 Demo Video: https://youtu.be/FOBf4af3o4U
