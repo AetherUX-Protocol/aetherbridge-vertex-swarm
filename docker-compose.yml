@@ -1,1 +1,37 @@
+version: '3.8'
 
+services:
+  # Vertex Node 1 - The Mesh Core
+  vertex-node-1:
+    image: tashi/vertex-node:latest
+    environment:
+      - NODE_ID=vertex-01
+      - NETWORK_TYPE=p2p
+    ports:
+      - "4000:4000"
+
+  # Aether Agent 1
+  agent-alpha:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - vertex-node-1
+    environment:
+      - AGENT_NAME=Alpha
+      - VERTEX_PEER=vertex-node-1:4000
+
+  # Aether Agent 2 (The Swarm Peer)
+  agent-beta:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - vertex-node-1
+    environment:
+      - AGENT_NAME=Beta
+      - VERTEX_PEER=vertex-node-1:4000
+
+networks:
+  swarm-mesh:
+    driver: bridge
