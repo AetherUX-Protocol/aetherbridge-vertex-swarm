@@ -1,1 +1,18 @@
+graph TD
+    subgraph "The Swarm (Vertex 2.0 Mesh)"
+        A[Aether Agent 1] <--> B[Aether Agent 2]
+        B <--> C[Aether Agent 3]
+        C <--> A
+    end
 
+    subgraph "The Bridge Layer (Sovereign Stack)"
+        B --> D{Hardened Runtime}
+        D -->|Validates| E[Rust/Alpine Secure Buffer]
+    end
+
+    subgraph "Settlement Layer"
+        E -->|Finality| F[Algorand Mainnet]
+    end
+
+    style B fill:#f96,stroke:#333,stroke-width:4px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
