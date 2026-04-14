@@ -3,6 +3,9 @@
 
 PLAYBOOK.md
 
+Vertex Swarm Integration
+The Aether Bridge utilizes Vertex 2.0 as its primary coordination layer. By stripping out central orchestrators, our agents use the Vertex P2P mesh to discover peers and verify transaction state in milliseconds, ensuring zero cloud dependency and maximum resilience
+
 # AetherBridge: Sovereign Agentic Rails (Vertex Swarm)
 
 This repository contains the leaderless settlement layer for **AetherUX**, utilizing the **Vertex/Tashi** consensus engine for resilient P2P coordination.
