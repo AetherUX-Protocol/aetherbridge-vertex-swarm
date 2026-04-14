@@ -1,18 +1,23 @@
-graph TD
-    subgraph "The Swarm (Vertex 2.0 Mesh)"
-        A[Aether Agent 1] <--> B[Aether Agent 2]
-        B <--> C[Aether Agent 3]
-        C <--> A
+graph LR
+    subgraph "Sovereign Swarm (Vertex 2.0 Mesh)"
+        direction LR
+        A1[Aether Agent 1] <-->|P2P Sync| A2[Aether Agent 2]
+        A2 <-->|P2P Sync| A3[Aether Agent 3]
+        A3 <-->|P2P Sync| A1
     end
 
-    subgraph "The Bridge Layer (Sovereign Stack)"
-        B --> D{Hardened Runtime}
-        D -->|Validates| E[Rust/Alpine Secure Buffer]
+    subgraph "Trust Anchor (Hardened Layer)"
+        A2 --- B{Vertex BFT Consensus}
+        B -->|Validated State| C[Rust/Alpine Secure Buffer]
     end
 
-    subgraph "Settlement Layer"
-        E -->|Finality| F[Algorand Mainnet]
+    subgraph "Global Settlement"
+        C -->|Finality| D((Algorand Blockchain))
     end
 
-    style B fill:#f96,stroke:#333,stroke-width:4px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style A1 fill:#2c3e50,color:#fff,stroke:#3498db
+    style A2 fill:#2c3e50,color:#fff,stroke:#3498db
+    style A3 fill:#2c3e50,color:#fff,stroke:#3498db
+    style B fill:#e67e22,color:#fff,stroke:#d35400
+    style C fill:#27ae60,color:#fff,stroke:#2ecc71
+    style D fill:#34495e,color:#fff,stroke:#fff
