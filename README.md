@@ -24,8 +24,18 @@ This repository contains the leaderless settlement layer for **AetherUX**, utili
 1. Install dependencies: `pip install tashi-sdk` (simulated)
 2. Launch Agent A: `python agents/aether_agent.py --id Alpha`
 3. Launch Agent B: `python agents/aether_agent.py --id Beta`
+🛠️ Local Setup
+Configure Environment:
+cp .env.example .env
+Add Keys:
+Open .env and enter your TASHI_CELL_ID and TASHI_API_KEY from the Tashi Console.
 
-4. ### 🔧 Auditor's Quick-Start
+Launch Node:
+npm install
+npm start
+   
+
+5. ### 🔧 Auditor's Quick-Start
 The core logic for the Vertex Swarm Challenge is located in `/agents/aether_agent.py`. 
 - **Stateful Handshake:** Lines 13-28
 - **Blackout Mode / P2P Resilience:** Lines 33-36
