@@ -48,6 +48,12 @@ To address the "Shipping Gap," we have provided a one-touch simulation that prov
 This script launches two nodes, establishes a Vertex/FoxMQ handshake, and then kills the primary node to demonstrate local state recovery.
 ```bash
 python scripts/blackout_sim.py
+2. Technical Proof Points
+Coordination: Watch the logs to see Beta detect the loss of Alpha without crashing.
+
+Vertex Integration: Our aether_agent.py uses the FoxMQ layer to broadcast heartbeat signals locally.
+
+Real-World Value: This stack ensures that field medics can continue logging patient data and IOUs even when the central clinic goes dark.
 
 One-Pager: https://docs.google.com/document/d/1WCPXCqH52RNEn1XyFY6DkxbVQF5P1qQZKvtuUcsdN1U/edit?usp=sharing
 Demo Video: https://youtu.be/FOBf4af3o4U
