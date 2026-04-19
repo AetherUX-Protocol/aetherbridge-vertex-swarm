@@ -40,6 +40,14 @@ The core logic for the Vertex Swarm Challenge is located in `/agents/aether_agen
 - **Stateful Handshake:** Lines 13-28
 - **Blackout Mode / P2P Resilience:** Lines 33-36
 - **x402 Settlement Logic:** Integrated within the agent state management.
+- ## 🚨 Final Sprint: The 2-Minute Audit (Edge Medics)
+
+To address the "Shipping Gap," we have provided a one-touch simulation that proves our **Coordination** and **Resilience** works at the edge.
+
+### **1. Run the Blackout Simulation**
+This script launches two nodes, establishes a Vertex/FoxMQ handshake, and then kills the primary node to demonstrate local state recovery.
+```bash
+python scripts/blackout_sim.py
 
 One-Pager: https://docs.google.com/document/d/1WCPXCqH52RNEn1XyFY6DkxbVQF5P1qQZKvtuUcsdN1U/edit?usp=sharing
 Demo Video: https://youtu.be/FOBf4af3o4U
